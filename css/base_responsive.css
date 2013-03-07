@@ -4,7 +4,7 @@ html,body {
 	padding-bottom: 40px;
 	background-color: #f5f5f5;
 }
-#footer {height: 30px;}
+.footer{max-width: 800px; padding: 0 20px 0; margin: 0 auto 0;}
 #menu {max-width: 800px; padding: 0 20px 0; margin: 0 auto 0;}
 #tdR {text-align:center;}
 @media (min-width: 300px) and (max-width: 979px) {
