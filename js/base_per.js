@@ -1,3 +1,4 @@
+$(document).ready(function(){
 	$("td#tdR").click(function () {
 		var curTD = $(this);
 		var curRD = curTD.find('input[type=radio]');
@@ -16,3 +17,4 @@
 		}
 		curRD.prop('checked', true);
 	});
+});
