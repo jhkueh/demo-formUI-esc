@@ -26,7 +26,7 @@ html,body{
 .table th{text-align:center;}
 .table-hover2 tr:hover td:not(.noHover){background-color: #f5f5f5;}/*fixed, thanks to:http://stackoverflow.com/a/11044093 */ */
 input[type="radio"],input[type="checkbox"]{margin: 0 0 0;}
-.tdRange {min-width:220px}
+.tdRange {width:220px}
 @media(min-width: 300px) and (max-width: 979px){
 	.footer .pull-right{ float: none;}
 }
@@ -40,5 +40,5 @@ input[type="radio"],input[type="checkbox"]{margin: 0 0 0;}
 	body{padding: 0px;}
 	input[type="range"]{width:auto;}
 	.form-signin{padding: 10px 10px 1px; border:none; -moz-border-radius: 0px; border-radius: 0px;}
-	.tdRange {min-width:145px}
+	.tdRange {width:145px}
 }
