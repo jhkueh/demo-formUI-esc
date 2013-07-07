@@ -1,34 +1,22 @@
-html,body {
+html,body{
 	height: 100%;
 	padding-top: 10px;
 	padding-bottom: 40px;
 	background-color: #f5f5f5;
 }
 .footer{max-width: 800px; padding: 0 20px 0; margin: 0 auto 0;}
-.menu-links {max-width: 800px; margin: 0 auto 0; list-style: none; }
-.menu-links li {display: inline; padding: 0 10px;}
+.menu-links{max-width: 800px; margin: 0 auto 0; list-style: none; padding-left:20px}
+.menu-links li{display: inline; padding: 0 10px;}
 #tdR {text-align:center;}
-@media (min-width: 300px) and (max-width: 979px) {
-	#wrap { padding-top: 0px;}
-	.footer .pull-right{ float: none;}
-	small.age > p{ margin: 0 0 5px;}
-}
-@media (min-width: 768px) and (max-width: 979px) {
-	.postx { padding: 30px 60px;}
-	.container{ width: 100%; padding-left: 80px;}
-}
-@media (min-width: 200px) and (max-width: 767px) {
-	.postx { padding: 15px 30px;}
-}
-.age {color: #A0A0A0;}
-.login {color: #7F7F7F;}
-.form-signin {
+.age{color: #A0A0A0;}
+.login{color: #7F7F7F;}
+.form-signin{
 	max-width: 800px;
 	padding: 19px 29px 10px;
 	margin: 0 auto 10px;
 	background-color: #fff;
 	border: 1px solid #e5e5e5;
-	-webkit-border-radius: 5px;
+	/* -webkit-border-radius: 5px; */
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
@@ -36,5 +24,21 @@ html,body {
 	box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
 .table th{text-align:center;}
-.table-hover2 tr:hover td:not(.noHover) {background-color: #f5f5f5;}/*fixed, thanks to:http://stackoverflow.com/a/11044093 */ */
+.table-hover2 tr:hover td:not(.noHover){background-color: #f5f5f5;}/*fixed, thanks to:http://stackoverflow.com/a/11044093 */ */
 input[type="radio"],input[type="checkbox"]{margin: 0 0 0;}
+.tdRange {min-width:220px}
+@media(min-width: 300px) and (max-width: 979px){
+	.footer .pull-right{ float: none;}
+}
+@media(min-width: 768px) and (max-width: 979px){
+	.container{width: 100%; padding-left: 80px;}
+}
+@media(min-width: 200px) and (max-width: 767px){
+	body{padding: 5px;}
+}
+@media(max-width: 639px){
+	body{padding: 0px;}
+	input[type="range"]{width:auto;}
+	.form-signin{padding: 10px 10px 1px; border:none; -moz-border-radius: 0px; border-radius: 0px;}
+	.tdRange {min-width:145px}
+}
