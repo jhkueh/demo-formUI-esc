@@ -1,4 +1,7 @@
-function DataCtrl($scope) {
+var app, DataCtrl;
+app = angular.module('sliderInput', []);
+
+DataCtrl = function($scope) {
 	$scope.data1 = [
 		{name:'Q1', text:'1. Quickly and accurately identifies good and evil and hates evil.', value: 0},
 		{name:'Q2', text:'2. Sees everything as either black or white; no gray or indefinite areas.', value: 0},
@@ -18,4 +21,17 @@ function DataCtrl($scope) {
 	$scope.submitForm = function() {
     alert('This is just a demo!');
   };
-}
+};
+
+// app.directive('wholeNumber', function() {
+    // return {
+        // link: function(scope, elem, attrs) {
+            // elem.on("blur", function() {
+                // var num = Math.abs(parseInt(elem.val(), 10));
+                // num = num > scope.maxValue ? 0 : num;
+                // scope.itm.qty = num;
+                // scope.$apply(); // update view
+            // });
+        // }
+    // };
+// });

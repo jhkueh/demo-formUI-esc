@@ -6,7 +6,7 @@
   // The $ is now locally scoped 
 	// Listen for the jQuery ready event on the document
 	$(function(){ // The DOM is ready!
-		var tblCell = $("td#tdR");
+		var tblCell = $("td.tdR");
 		tblCell.on("click", function() {
 			var curTD = $(this);
 			var curRD = curTD.find('input[type=radio]');

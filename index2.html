@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html data-ng-app="sliderInput">
 <head>
 	<meta charset="utf-8">
 	<title>Form UI Demo(2)--WIP</title>
@@ -10,7 +10,7 @@
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
 </head>
-<body ng-controller="DataCtrl">
+<body data-ng-controller="DataCtrl">
 	<ul class="menu-links">
 		<li><a href="/">Home</a></li>
 		<li><a href="index.html">Demo</a></li>
@@ -40,9 +40,12 @@
 										<tr><th>Characteristics</th><th>Answer 0-5</th></tr>
 									</thead>
 									<tbody>
-										<tr ng-repeat="entry in data1">
+										<tr data-ng-repeat="entry in data1">
 											<td>{{entry.text}}</td>
-											<td class="tdRange"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;{{entry.value}}</td>
+											<td class="tdRange">
+												<input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;
+												<input class="input-xmini" type="text" name="input" data-ng-model="entry.value">
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -55,7 +58,10 @@
 									<tbody>
 										<tr ng-repeat="entry in data2">
 											<td>{{entry.text}}</td>
-											<td class="tdRange"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;{{entry.value}}</td>
+											<td class="tdRange">
+												<input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;
+												<input class="input-xmini" type="text" name="input" ng-model="entry.value">
+											</td>
 										</tr>
 									</tbody>
 								</table>
