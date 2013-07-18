@@ -1,5 +1,6 @@
 var app, DataCtrl;
-app = angular.module('sliderInput', []);
+app = angular.module('sliderInput', ['ngSanitize', 'ui.bootstrap']);
+
 
 DataCtrl = function($scope) {
 	$scope.data1 = [
@@ -33,5 +34,19 @@ DataCtrl = function($scope) {
 	
 	$scope.submitForm = function() {
 		alert('This is just a demo!');
+  };
+}
+
+var TabsCtrl = function ($scope) {
+}
+
+var AlertCtrl = function ($scope) {
+  $scope.alerts = [
+    { type: '', msg: "<h4>Hi, Welcome to the Demo(3)</h4>This is just a work-in-progress demo of what I am currently working on. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert." },
+    { type: 'info', msg: "<h4>How To Answer The Quiz:</h4><p>For each question, move slider to select answer between 0 to 4 (0:terrible, 4:great).</p><p>Tick the checkbox if it is natural.</p>" }
+  ];
+	
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
   };
 }

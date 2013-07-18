@@ -5,6 +5,9 @@
 	<title>Form UI Demo(3)--WIP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-sanitize.js"></script>
+	<script src="js/ui-bootstrap-custom-0.4.0.min.js"></script>
+	<script src="js/ui-bootstrap-custom-tpls-0.4.0.min.js"></script>
 	<script src="js/index3.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -21,28 +24,16 @@
 	<p></p>
 	<div class="container-fluid">
 		<form class="form-signin" ng-submit="submitForm()">
-			<div class="tab-content">
-				<div class="tab-pane active" id="tabs-basic">
 					<h2 class="form-signin-heading">LIFE GIFT TEST (Beta)</h2>
-					<div class="alert alert-block fade in">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<h4>Hi, Welcome to the Demo(3)</h4>
-						This is just a work-in-progress demo of what I am currently working on. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert.
+					<div ng-controller="AlertCtrl">
+						<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
+							<span ng-bind-html="alert.msg"></span>
+						</alert>
 					</div>
-					<div class="alert alert-info fade in">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<h4>How To Answer The Quiz:</h4>
-						<p>For each question, move slider to select answer between 0 to 4 (0:terrible, 4:great).</p>
-						<p>Tick the checkbox if it is natural.</p>
-					</div>
-					<div class="tabbable">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q8</a></li>
-							<li><a href="#tabs1-pane2" data-toggle="tab">Q9 - Q16</a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane active" id="tabs1-pane1">
-								<table class="table table-hover2 table-bordered">
+					<div ng-controller="TabsCtrl">
+						<tabset>
+							<tab heading="Q1 - Q8">
+								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
 											<th>Life Gifts</th>
@@ -60,13 +51,13 @@
 										</tr>
 									</tbody>
 								</table>
-							</div>
-							<div class="tab-pane" id="tabs1-pane2">
-								<table class="table table-hover2 table-bordered">
+							</tab>
+							<tab heading="Q9 - Q16">
+								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
 											<th>Life Gifts</th>
-											<th>Was it enjoyable? (0 = terrible, 4 = great)</th>
+											<th>Was it enjoyable?</br>(0 = terrible, 4 = great)</th>
 											<th>Is natural?</th>
 											<th>Is life gifts?</th>
 										</tr>
@@ -81,22 +72,17 @@
 									</tbody>
 								</table>
 								<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
-							</div>
+							</tab>
 						</div>
-					</div>
-				</div>
-			</div>
 		</form>
 	</div>
 	<footer>
 		<div class="container footer">
 			<hr>
 			<p class="pull-right"><a href="https://github.com/jhkueh">github.com/jhkueh</a></p>
-			<p class="pull-left">Powered by <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a> & <a href="http://angularjs.org/">AngularJS</a>.</p>
+			<p class="pull-left">Powered by <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>, <a href="http://angularjs.org/">AngularJS</a> & <a href="http://angular-ui.github.io/bootstrap">UI-Bootstrap</a>.</p>
 		</div>
 	</footer>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
 
