@@ -1,193 +1,85 @@
 <!DOCTYPE html>
-<html ng-app>
+<html data-ng-app="sliderInput">
 <head>
 	<meta charset="utf-8">
-	<title>Form UI Demo--WIP</title>
+	<title>Form UI Demo(3)--WIP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<script src="js/index3.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
+	<style type="text/css"> .gifted-false{visibility:hidden;} .gifted-true{visibility:visible;}</style>
 </head>
-<body ng-controller="DataCtrl">
+<body data-ng-controller="DataCtrl">
 	<ul class="menu-links">
 		<li><a href="/">Home</a></li>
 		<li><a href="index.html">Demo</a></li>
 		<li><a href="index2.html">Demo(2)</a></li>
+		<li><a href="index3.html">Demo(3)</a></li>
 	</ul>
 	<p></p>
 	<div class="container-fluid">
-		<form method="post" class="form-signin">
+		<form class="form-signin" ng-submit="submitForm()">
 			<div class="tab-content">
 				<div class="tab-pane active" id="tabs-basic">
-					<h2 class="form-signin-heading">PERSONALITY PROFILE QUIZ (Demo|WIP)</h2>
-					<div class="alert alert-block fade in">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<h4>Hi, Welcome to the Demo</h4>
-						This is just a work-in-progress demo of what I am currently working on. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert.
-					</div>
+					<h2 class="form-signin-heading">LIFE GIFT TEST (Beta)</h2>
 					<div class="alert alert-info fade in">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<h4>How To Answer The Quiz:</h4>
-						<p>For each question, select the qualities that <strong>most</strong> & <strong>least</strong> describe you.</p>
-						<strong>Tip:</strong> Clicking the desired radio button's table cell will select the radio button.
+						<p>For each question, move slider to select answer between 0 to 4 (0:terrible, 4:great).</p>
+						<p>Tick the checkbox if it is natural.</p>
 					</div>
-					<div class="tabbable tabs-below">
+					<div class="tabbable">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q8</a></li>
+							<li><a href="#tabs1-pane2" data-toggle="tab">Q9 - Q16</a></li>
+						</ul>
 						<div class="tab-content">
 							<div class="tab-pane active" id="tabs1-pane1">
 								<table class="table table-hover2 table-bordered">
 									<thead>
-										<tr><th colspan="2"></th><th>Most</th><th>Least</th></tr>
+										<tr>
+											<th>Life Gifts</th>
+											<th>Was it enjoyable?</br>(0 = terrible, 4 = great)</th>
+											<th>Is natural?</th>
+											<th>Is life gifts?</th>
+										</tr>
 									</thead>
 									<tbody>
 										<tr ng-repeat="entry in data1">
-											<td rowspan="4" class="noHover">{{entry.no}}</td>
-											<td>{{entry.text1}}</td>
-											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id1}} value={{entry.valueM1}}></td>
-											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id1}} value={{entry.valueL1}}></td>
-										</tr>
-										<tr>
-											<td>{{entry.text2}}</td>
-											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id2}} value={{entry.valueM2}}></td>
-											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id2}} value={{entry.valueL2}}></td>
-										</tr>
-										<tr>
-											<td>{{entry.text3}}</td>
-											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id3}} value={{entry.valueM3}}></td>
-											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id3}} value={{entry.valueL3}}></td>
-										</tr>
-										<tr>
-											<td>{{entry.text4}}</td>
-											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id4}} value={{entry.valueM4}}></td>
-											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id4}} value={{entry.valueL4}}></td>
-										</tr>
-
-										<tr>
-											<td rowspan="4" class="noHover">2</td>
-											<td>People enjoy my company</td>
-											<td class="tdR"><input type="radio" name="Q2-M" id="op5" value="SQ1"></td>
-											<td class="tdR"><input type="radio" name="Q2-L" id="op5" value="SQ1"></td>
-										</tr>
-										<tr>
-											<td>I often introspect and evaluate myself</td>
-											<td class="tdR"><input type="radio" name="Q2-M" id="op6" value="ST2"></td>
-											<td class="tdR"><input type="radio" name="Q2-L" id="op6" value="ST2"></td>
-										</tr>
-										<tr>
-											<td>I am stubborn, do not easily give up</td>
-											<td class="tdR"><input type="radio" name="Q2-M" id="op7" value="Z3"></td>
-											<td class="tdR"><input type="radio" name="Q2-L" id="op7" value="Z3"></td>
-										</tr>
-										<tr>
-											<td>I tend to be a kind and nice person</td>
-											<td class="tdR"><input type="radio" name="Q2-M" id="op8" value="N4"></td>
-											<td class="tdR"><input type="radio" name="Q2-L" id="op8" value="TR4"></td>
-										</tr>
-										<tr>
-											<td rowspan="4" class="noHover">3</td>
-											<td>I am a good follower</td>
-											<td class="tdR"><input type="radio" name="Q3-M" id="op9" value="N1"></td>
-											<td class="tdR"><input type="radio" name="Q3-L" id="op9" value="ST1"></td>
-										</tr>
-										<tr>
-											<td>I am willing to take a risk</td>
-											<td class="tdR"><input type="radio" name="Q3-M" id="op10" value="Z2"></td>
-											<td class="tdR"><input type="radio" name="Q3-L" id="op10" value="Z2"></td>
-										</tr>
-										<tr>
-											<td>I am loyal</td>
-											<td class="tdR"><input type="radio" name="Q3-M" id="op11" value="TR3"></td>
-											<td class="tdR"><input type="radio" name="Q3-L" id="op11" value="N3"></td>
-										</tr>
-											<tr>
-											<td>People say I am attractive, full of charisma</td>
-											<td class="tdR"><input type="radio" name="Q3-M" id="op12" value="SQ4"></td>
-											<td class="tdR"><input type="radio" name="Q3-L" id="op12" value="SQ4"></td>
+											<td>{{entry.text}}</td>
+											<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
+											<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
+											<td class="tdR"><div class="gifted-{{entry.gifted}}"><i class="icon-ok"></i></div></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<div class="tab-pane" id="tabs1-pane2">
-								<table class="table table-hover table-bordered"> <!-- this tab showcase the current problem with using table-hover & rowspan -->
+								<table class="table table-hover2 table-bordered">
 									<thead>
-										<tr><th colspan="2"></th><th>Most</th><th>Least</th></tr>
+										<tr>
+											<th>Life Gifts</th>
+											<th>Was it enjoyable? (0 = terrible, 4 = great)</th>
+											<th>Is natural?</th>
+											<th>Is life gifts?</th>
+										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td rowspan="4" class="noHover">4</td>
-											<td>I am open-minded</td>
-											<td class="tdR"><input type="radio" name="Q4-M" id="op13" value="SQ1"></td>
-											<td class="tdR"><input type="radio" name="Q4-L" id="op13" value="N1"></td>
-										</tr>
-										<tr>
-											<td>I am always ready to help</td>
-											<td class="tdR"><input type="radio" name="Q4-M" id="op14" value="ST2"></td>
-											<td class="tdR"><input type="radio" name="Q4-L" id="op14" value="ST2"></td>
-										</tr>
-										<tr>
-											<td>I am strong willed</td>
-											<td class="tdR"><input type="radio" name="Q4-M" id="op15" value="N3"></td>
-											<td class="tdR"><input type="radio" name="Q4-L" id="op15" value="Z3"></td>
-										</tr>
-										<tr>
-											<td>I like to please people and people like me</td>
-											<td class="tdR"><input type="radio" name="Q4-M" id="op16" value="TR4"></td>
-											<td class="tdR"><input type="radio" name="Q4-L" id="op16" value="TR4"></td>
-										</tr>
-										<tr>
-											<td rowspan="4" class="noHover">5</td>
-											<td>People think I am funny, I enjoy making jokes</td>
-											<td class="tdR"><input type="radio" name="Q5-M" id="op17" value="N1"></td>
-											<td class="tdR"><input type="radio" name="Q5-L" id="op17" value="SQ1"></td>
-										</tr>
-										<tr>
-											<td>I have good eyes on details, I am neat and orderly</td>
-											<td class="tdR"><input type="radio" name="Q5-M" id="op18" value="ST2"></td>
-											<td class="tdR"><input type="radio" name="Q5-L" id="op18" value="ST2"></td>
-										</tr>
-										<tr>
-											<td>I tend to be outspoken, speak uninhibitedly</td>
-											<td class="tdR"><input type="radio" name="Q5-M" id="op19" value="N3"></td>
-											<td class="tdR"><input type="radio" name="Q5-L" id="op19" value="Z3"></td>
-										</tr>
-										<tr>
-											<td>I am a very calm and placid person</td>
-											<td class="tdR"><input type="radio" name="Q5-M" id="op20" value="TR4"></td>
-											<td class="tdR"><input type="radio" name="Q5-L" id="op20" value="TR4"></td>
-										</tr>
-										<tr>
-											<td rowspan="4" class="noHover">6</td>
-											<td>I am competitive</td>
-											<td class="tdR"><input type="radio" name="Q6-M" id="op21" value="Z1"></td>
-											<td class="tdR"><input type="radio" name="Q6-L" id="op21" value="Z1"></td>
-										</tr>
-										<tr>
-											<td>I am caring and considerate</td>
-											<td class="tdR"><input type="radio" name="Q6-M" id="op22" value="TR2"></td>
-											<td class="tdR"><input type="radio" name="Q6-L" id="op22" value="TR2"></td>
-										</tr>
-										<tr>
-											<td>I am cheerful</td>
-											<td class="tdR"><input type="radio" name="Q6-M" id="op23" value="N3"></td>
-											<td class="tdR"><input type="radio" name="Q6-L" id="op23" value="SQ3"></td>
-										</tr>
-										<tr>
-											<td>I like peace and being in harmony with others</td>
-											<td class="tdR"><input type="radio" name="Q6-M" id="op24" value="N4"></td>
-											<td class="tdR"><input type="radio" name="Q6-L" id="op24" value="ST4"></td>
+										<tr ng-repeat="entry in data2">
+											<td>{{entry.text}}</td>
+											<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
+											<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
+											<td class="tdR"><div class="gifted-{{entry.gifted}}"><i class="icon-ok"></i></div></td>
 										</tr>
 									</tbody>
 								</table>
+								<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
 							</div>
 						</div>
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q3</a></li>
-							<li><a href="#tabs1-pane2" data-toggle="tab">Q4 - Q6</a></li>
-						</ul>
 					</div>
 				</div>
-			<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
 			</div>
 		</form>
 	</div>
@@ -200,7 +92,6 @@
 	</footer>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/base_per.js"></script>
 </body>
 </html>
 

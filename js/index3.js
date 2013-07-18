@@ -1,19 +1,37 @@
-function DataCtrl($scope) {
-	$scope.data1 = [
-		{no:1, text1:'I see myself as a gentle person', valueM1:'TR1', valueL1:'TR1', id1:'op1',
-					 text2:'I am very persuasive', valueM2:'SQ2', valueL2:'N2', id2:'op2',
-					 text3:'I am a very modest type', valueM3:'ST3', valueL3:'ST3', id3:'op3',
-					 text4:'I often come up with original ideas', valueM4:'N4', valueL4:'Z4', id4:'op4',
-					 nameM:'Q1-M', nameL:'Q1-L'},
-		{no:2, text1:'People enjoy my company', valueM1:'SQ1', valueL1:'SQ1', id1:'op5',
-					 text2:'I often introspect and evaluate myself', valueM2:'ST2', valueL2:'ST2', id2:'op6',
-					 text3:'I am stubborn, do not easily give up', valueM3:'Z3', valueL3:'Z3', id3:'op7',
-					 text4:'I tend to be a kind and nice person', valueM4:'N4', valueL4:'TR4', id4:'op8',
-					 nameM:'Q2-M', nameL:'Q2-L'},					 
-		];
-		
+var app, DataCtrl;
+app = angular.module('sliderInput', []);
 
+DataCtrl = function($scope) {
+	$scope.data1 = [
+		{name:'Q1', text:'1. Mechanical aptitude – understand apply the principles of mechanics / physics.', value:0, natural:false, gifted:false},
+		{name:'Q2', text:'2. Operating heavy equipment, driving, piloting – includes construction equipment as well as transportation vehicles.', value:0, natural:false, gifted:false},
+		{name:'Q3', text:'3. Manual dexterity – skill and ease at using one’s hands or fine tools.', value:0, natural:false, gifted:false},
+		{name:'Q4', text:'4. Building mechanical / structural devices – design and/or assemble materials as well as execute repairs.', value:0, natural:false, gifted:false},
+		{name:'Q5', text:'5. Physical coordination – using multiple muscle movements ot a single end, such as needed in athletics, skilled trades, etc.', value:0, natural:false, gifted:false},
+		{name:'Q6', text:'6. Organizing supplies or implements – identify methods that lead to ease of retrieval and maintenance.', value:0, natural:false, gifted:false},
+		{name:'Q7', text:'7. Taking physical risks – attracted to activities or occupations with elements of physical danger.', value:0, natural:false, gifted:false},
+		{name:'Q8', text:'8. Emotional stability, reliability – react impersonally to situations and thereby stay on course.', value:0, natural:false, gifted:false}];
+	$scope.data2 = [
+		{name:'Q9', text:'9. Inventing – imagine or produce something, especially in technical, scientific, or theoretical realms.', value:0, natural:false, gifted:false},
+		{name:'Q10', text:'10. Researching – investigate or experiment to get knowledge, examine theories, or find new applications of current knowledge.', value:0, natural:false, gifted:false},
+		{name:'Q11', text:'11. Conceptualising – originate and develop abstract ideas or theories.', value:0, natural:false, gifted:false},
+		{name:'Q12', text:'12. Working independently – work well without guidance or input from others.', value:0, natural:false, gifted:false},
+		{name:'Q13', text:'13. Solving complex problems – find solutions to difficult situations or unique issues, usually through logic.', value:0, natural:false, gifted:false},
+		{name:'Q14', text:'14. Computer aptitude – computer skills or systems and software design and development.', value:0, natural:false, gifted:false},
+		{name:'Q15', text:'15. Synthesizing information – organise or combine information from different sources so that it is easily understood.', value:0, natural:false, gifted:false},
+		{name:'Q16', text:'16. Theorising – articulate explanations, find connections, or project future trends.', value:0, natural:false, gifted:false}];
+
+	$scope.checkSlider = function($event, entry) {
+		var slider = $event.target;
+		entry.gifted = ( slider.value > 2 && entry.natural ) ? true: false;
+  };
+		
+	$scope.checkBox = function($event, entry) {
+		var checkbox = $event.target;
+		entry.gifted = ( checkbox.checked && entry.value>2 ) ? true: false;
+  };
+	
 	$scope.submitForm = function() {
-    alert('This is just a demo!');
+		alert('This is just a demo!');
   };
 }

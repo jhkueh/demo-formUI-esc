@@ -28,8 +28,8 @@ DataCtrl = function($scope) {
         // link: function(scope, elem, attrs) {
             // elem.on("blur", function() {
                 // var num = Math.abs(parseInt(elem.val(), 10));
-                // num = num > scope.maxValue ? 0 : num;
-                // scope.itm.qty = num;
+                // // num = num > scope.maxValue ? 0 : num;
+                // scope.data1.value = num;
                 // scope.$apply(); // update view
             // });
         // }

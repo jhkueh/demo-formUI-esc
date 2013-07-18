@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
 	<meta charset="utf-8">
 	<title>Form UI Demo--WIP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="js/index3.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
 </head>
-<body>
+<body ng-controller="DataCtrl">
 	<ul class="menu-links">
 		<li><a href="/">Home</a></li>
 		<li><a href="index.html">Demo</a></li>
 		<li><a href="index2.html">Demo(2)</a></li>
-		<li><a href="index3.html">Demo(3)</a></li>
 	</ul>
 	<p></p>
 	<div class="container-fluid">
-		<form id="mainForm" method="post" class="form-signin">
+		<form method="post" class="form-signin">
 			<div class="tab-content">
 				<div class="tab-pane active" id="tabs-basic">
 					<h2 class="form-signin-heading">PERSONALITY PROFILE QUIZ (Demo|WIP)</h2>
@@ -39,28 +40,29 @@
 									<thead>
 										<tr><th colspan="2"></th><th>Most</th><th>Least</th></tr>
 									</thead>
-									<tbody id="tblBody">
-										<tr>
-											<td rowspan="4" class="noHover">1</td>
-											<td>I see myself as a gentle person</td>
-											<td class="tdR"><input type="radio" name="Q1-M" id="op1" value="TR1"></td>
-											<td class="tdR"><input type="radio" name="Q1-L" id="op1" value="TR1"></td>
+									<tbody>
+										<tr ng-repeat="entry in data1">
+											<td rowspan="4" class="noHover">{{entry.no}}</td>
+											<td>{{entry.text1}}</td>
+											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id1}} value={{entry.valueM1}}></td>
+											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id1}} value={{entry.valueL1}}></td>
 										</tr>
 										<tr>
-											<td>I am very persuasive</td>
-											<td class="tdR"><input type="radio" name="Q1-M" id="op2" value="SQ2"></td>
-											<td class="tdR"><input type="radio" name="Q1-L" id="op2" value="N2"></td>
+											<td>{{entry.text2}}</td>
+											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id2}} value={{entry.valueM2}}></td>
+											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id2}} value={{entry.valueL2}}></td>
 										</tr>
 										<tr>
-											<td>I am a very modest type</td>
-											<td class="tdR"><input type="radio" name="Q1-M" id="op3" value="ST3"></td>
-											<td class="tdR"><input type="radio" name="Q1-L" id="op3" value="ST3"></td>
+											<td>{{entry.text3}}</td>
+											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id3}} value={{entry.valueM3}}></td>
+											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id3}} value={{entry.valueL3}}></td>
 										</tr>
-											<tr>
-											<td>I often come up with original ideas</td>
-											<td class="tdR"><input type="radio" name="Q1-M" id="op4" value="N4"></td>
-											<td class="tdR"><input type="radio" name="Q1-L" id="op4" value="Z4"></td>
+										<tr>
+											<td>{{entry.text4}}</td>
+											<td class="tdR"><input type="radio" name={{entry.nameM}} id={{entry.id4}} value={{entry.valueM4}}></td>
+											<td class="tdR"><input type="radio" name={{entry.nameL}} id={{entry.id4}} value={{entry.valueL4}}></td>
 										</tr>
+
 										<tr>
 											<td rowspan="4" class="noHover">2</td>
 											<td>People enjoy my company</td>
@@ -111,7 +113,7 @@
 									<thead>
 										<tr><th colspan="2"></th><th>Most</th><th>Least</th></tr>
 									</thead>
-									<tbody id="tblBody">
+									<tbody>
 										<tr>
 											<td rowspan="4" class="noHover">4</td>
 											<td>I am open-minded</td>
@@ -193,7 +195,7 @@
 		<div class="container footer">
 			<hr>
 			<p class="pull-right"><a href="https://github.com/jhkueh">github.com/jhkueh</a></p>
-			<p class="pull-left">Powered by <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>.</p>
+			<p class="pull-left">Powered by <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a> & <a href="http://angularjs.org/">AngularJS</a>.</p>
 		</div>
 	</footer>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
