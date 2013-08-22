@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html data-ng-app="sliderInput">
 <head>
 	<meta charset="utf-8">
 	<title>Form UI Demo(2)--WIP</title>
@@ -10,11 +10,13 @@
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
 </head>
-<body ng-controller="DataCtrl">
+<body data-ng-controller="DataCtrl">
 	<ul class="menu-links">
 		<li><a href="/">Home</a></li>
 		<li><a href="index.html">Demo</a></li>
 		<li><a href="index2.html">Demo(2)</a></li>
+		<li><a href="index3.html">Demo(3)</a></li>
+		<li><a href="index4.html">Demo(4)</a></li>
 	</ul>
 	<p></p>
 	<div class="container-fluid">
@@ -25,14 +27,18 @@
 					<div class="alert alert-block fade in">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<h4>Hi, Welcome to the Demo(2)</h4>
-						This is just a work-in-progress demo of what I am currently working on. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert.
+						This is just a demo of my past work. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert.
 					</div>
 					<div class="alert alert-info fade in">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<h4>How To Answer The Quiz:</h4>
 						<p>For each question, move slider to select answer between 0 to 5 (0: never, 1: seldom, 2: sometimes, 3: usually, 4: mostly, 5: always).</p>
 					</div>
-					<div class="tabbable tabs-below">
+					<div class="tabbable">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q6</a></li>
+							<li><a href="#tabs1-pane2" data-toggle="tab">Q7 - Q12</a></li>
+						</ul>
 						<div class="tab-content">
 							<div class="tab-pane active" id="tabs1-pane1">
 								<table class="table table-hover2 table-bordered">
@@ -40,9 +46,12 @@
 										<tr><th>Characteristics</th><th>Answer 0-5</th></tr>
 									</thead>
 									<tbody>
-										<tr ng-repeat="entry in data1">
+										<tr data-ng-repeat="entry in data1">
 											<td>{{entry.text}}</td>
-											<td class="tdRange"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;{{entry.value}}</td>
+											<td class="tdRange">
+												<input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;
+												<input class="input-xmini" type="text" ng-model="entry.value" name="input" maxlength="1">
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -55,19 +64,18 @@
 									<tbody>
 										<tr ng-repeat="entry in data2">
 											<td>{{entry.text}}</td>
-											<td class="tdRange"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;{{entry.value}}</td>
+											<td class="tdRange">
+												<input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="5">&nbsp;
+												<input class="input-xmini" type="text" name="input" ng-model="entry.value" maxlength="1">
+											</td>
 										</tr>
 									</tbody>
 								</table>
+								<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
 							</div>
 						</div>
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q6</a></li>
-							<li><a href="#tabs1-pane2" data-toggle="tab">Q7 - Q12</a></li>
-						</ul>
 					</div>
 				</div>
-			<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
 			</div>
 		</form>
 	</div>
@@ -80,7 +88,6 @@
 	</footer>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<!-- <script src="js/base_per.js"></script> -->
 </body>
 </html>
 

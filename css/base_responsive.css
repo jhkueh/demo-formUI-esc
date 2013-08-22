@@ -4,11 +4,11 @@ html,body{
 	padding-bottom: 40px;
 	background-color: #f5f5f5;
 }
+.age{color: #A0A0A0;}
+.blank-space{margin:30px 0;}
 .footer{max-width: 800px; padding: 0 20px 0; margin: 0 auto 0;}
 .menu-links{max-width: 800px; margin: 0 auto 0; list-style: none; padding-left:20px}
 .menu-links li{display: inline; padding: 0 10px;}
-#tdR {text-align:center;}
-.age{color: #A0A0A0;}
 .login{color: #7F7F7F;}
 .form-signin{
 	max-width: 800px;
@@ -23,22 +23,24 @@ html,body{
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
 	box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
+input[type="text"].input-xmini  {width: 8px; margin-bottom: 2px; padding: 3px 3px;}
 .table th{text-align:center;}
 .table-hover2 tr:hover td:not(.noHover){background-color: #f5f5f5;}/*fixed, thanks to:http://stackoverflow.com/a/11044093 */ */
 input[type="radio"],input[type="checkbox"]{margin: 0 0 0;}
-.tdRange {min-width:220px}
-@media(min-width: 300px) and (max-width: 979px){
-	.footer .pull-right{ float: none;}
-}
-@media(min-width: 768px) and (max-width: 979px){
-	.container{width: 100%; padding-left: 80px;}
-}
-@media(min-width: 200px) and (max-width: 767px){
-	body{padding: 5px;}
-}
+.tdRange {width:230px}
+td.tdR {text-align:center; vertical-align: middle;}
+@media(min-width: 300px) and (max-width: 979px){.footer .pull-right{ float: none;}}
+@media(min-width: 768px) and (max-width: 979px){.container{width: 100%; padding-left: 80px;}}
+@media(min-width: 200px) and (max-width: 767px){body{padding: 5px;}}
 @media(max-width: 639px){
 	body{padding: 0px;}
-	input[type="range"]{width:auto;}
 	.form-signin{padding: 10px 10px 1px; border:none; -moz-border-radius: 0px; border-radius: 0px;}
-	.tdRange {min-width:145px}
+}
+@media(min-width: 321px) and(max-width: 639px){
+	input[type="range"]{width:auto;}
+	.tdRange {width:153px}
+}
+@media(max-width: 320px){
+	input[type="range"]{width:auto; max-width:100px;}
+	.tdRange {width:125px}
 }
