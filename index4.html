@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form UI Demo(4)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-sanitize.js"></script>
+	<script src="js/ui-bootstrap-custom-0.4.0.min.js"></script>
+	<script src="js/ui-bootstrap-custom-tpls-0.4.0.min.js"></script>
+	<script src="js/index4.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="css/base_responsive.css" rel="stylesheet">
+	<link href="css/rainbow.css" rel="stylesheet">
+	<style type="text/css">input[type="checkbox"].demo {margin: 0;}</style>
+</head>
+<body >
+	<ul class="menu-links">
+		<li><a href="/">Home</a></li>
+		<li><a href="index.html">Demo</a></li>
+		<li><a href="index2.html">Demo(2)</a></li>
+		<li><a href="index3.html">Demo(3)</a></li>
+		<li><a href="index4.html">Demo(4)</a></li>
+	</ul>
+	<p></p>
+	<div class="form-signin" data-ng-app="customDirectiveApp">
+		<div class="" data-ng-controller="CheckboxGroupCtrl">
+			<h3 class="form-signin-heading">AngularJS Custom Directive Demo</h3>
+			<div ng-controller="AlertCtrl">
+				<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
+					<span ng-bind-html="alert.msg"></span>
+				</alert>
+			</div>
+			<ul>
+				<li ng-repeat="entry in list1">{{data[entry].text}}</li>
+			</ul>
+			<checkbox-group model="data" mlist="list1" xclass="demo" max=3></checkbox-group>
+		</div>
+		<div class="blank-space"></div>
+		<tabset>
+			<tab heading="Markup">
+				<pre class="rainbow">  <span class="support tag"><span class="support tag">&lt;div</span> <span class="support attribute">data-ng-controller</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">CheckboxGroupCtrl</span><span class="string quote">"</span></span><span class="string quote">&gt;</span></span>
+    <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>h3</span><span class="string quote">&gt;</span></span>AngularJS Custom Directive Demo<span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>h3</span><span class="string quote">&gt;</span></span>
+    <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>ul</span><span class="string quote">&gt;</span></span>
+    <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>li</span> <span class="support attribute">ng-repeat</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">entry in list1</span><span class="string quote">"</span></span><span class="string quote">&gt;</span></span>{{data[entry].text}}<span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>li</span><span class="string quote">&gt;</span></span>
+    <span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>ul</span><span class="string quote">&gt;</span></span>
+    <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>checkbox-group</span> <span class="support attribute">model</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">data</span><span class="string quote">"</span></span> <span class="support attribute">mlist</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">list1</span><span class="string quote">"</span></span> <span class="support attribute">xclass</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">demo</span><span class="string quote">"</span></span> <span class="support attribute">max</span><span class="support attr-value"><span class="string quote">=</span><span class="string value">3</span><span class="string quote">&gt;</span></span></span><span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>checkbox-group</span><span class="string quote">&gt;</span></span>
+  <span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>div</span><span class="string quote">&gt;</span></span>
+				</pre>
+			</tab>
+			<tab heading="JavaScript">
+				<pre class="rainbow">  CheckboxGroupCtrl <span class="support operator">=</span> <span class="support keyword">function</span><span class="string quote">(</span>$scope<span class="string quote">)</span> <span class="string quote">{</span>
+	$scope<span class="string quote">.</span>data <span class="support operator">=</span> <span class="string quote">[</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'1'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Apple'</span><span class="string quote">,</span> select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">,</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'2'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Orange'</span><span class="string quote">,</span> select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">,</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'3'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Banana'</span><span class="string quote">,</span>	select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">,</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'4'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Pineapple'</span><span class="string quote">,</span> select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">,</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'5'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Watermelon'</span><span class="string quote">,</span> select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">,</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'6'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Avocado'</span><span class="string quote">,</span> select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">,</span>
+		<span class="string quote">{</span>ID<span class="string quote">:</span><span class="support string">'7'</span><span class="string quote">,</span> text<span class="string quote">:</span><span class="support string">'Kiwi'</span><span class="string quote">,</span> select<span class="string quote">:</span><span class="support boolean">false</span><span class="string quote">}</span><span class="string quote">]</span><span class="string quote">;</span>
+	$scope<span class="string quote">.</span>list1 <span class="support operator">=</span> <span class="string quote">[</span><span class="string quote">]</span><span class="string quote">;</span>
+<span class="string quote">}</span>
+				</pre>
+			</tab>
+		</tabset>
+		<div class="blank-space"></div>
+	</div>
+	<footer>
+		<div class="container footer">
+			<hr>
+			<p class="pull-right"><a href="https://github.com/jhkueh">github.com/jhkueh</a></p>
+			<p class="pull-left">Powered by <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>, <a href="http://angularjs.org/">AngularJS</a> & <a href="http://angular-ui.github.io/bootstrap">UI-Bootstrap</a>.</p>
+		</div>
+	</footer>
+</body>
+</html>
+
