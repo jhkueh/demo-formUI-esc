@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Form UI Demo--WIP</title>
+	<title>Form UI Demo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -20,11 +20,11 @@
 		<form id="mainForm" method="post" class="form-signin">
 			<div class="tab-content">
 				<div class="tab-pane active" id="tabs-basic">
-					<h2 class="form-signin-heading">PERSONALITY PROFILE QUIZ (Demo|WIP)</h2>
+					<h2 class="form-signin-heading">PERSONALITY PROFILE QUIZ (Demo)</h2>
 					<div class="alert alert-block fade in">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<h4>Hi, Welcome to the Demo</h4>
-						This is just a work-in-progress demo of what I am currently working on. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert.
+						This is just a demo of my past work. It is a cut-down version. Clicking the 'Submit' button won't work (so don't bother) and of course, the actual verson won't have this alert.
 					</div>
 					<div class="alert alert-info fade in">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -32,7 +32,11 @@
 						<p>For each question, select the qualities that <strong>most</strong> & <strong>least</strong> describe you.</p>
 						<strong>Tip:</strong> Clicking the desired radio button's table cell will select the radio button.
 					</div>
-					<div class="tabbable tabs-below">
+					<div class="tabbable">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q3</a></li>
+							<li><a href="#tabs1-pane2" data-toggle="tab">Q4 - Q6</a></li>
+						</ul>
 						<div class="tab-content">
 							<div class="tab-pane active" id="tabs1-pane1">
 								<table class="table table-hover2 table-bordered">
@@ -177,15 +181,11 @@
 										</tr>
 									</tbody>
 								</table>
+								<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
 							</div>
 						</div>
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tabs1-pane1" data-toggle="tab">Q1 - Q3</a></li>
-							<li><a href="#tabs1-pane2" data-toggle="tab">Q4 - Q6</a></li>
-						</ul>
 					</div>
 				</div>
-			<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
 			</div>
 		</form>
 	</div>
