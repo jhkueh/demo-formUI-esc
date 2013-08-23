@@ -51,6 +51,12 @@ app.directive("checkboxGroup", function() {
 							scope.mlist.push(i);
 						} else {
 							counter -= 1;
+							var loc = scope.mlist.indexOf(i);
+							if(loc >= 0) {
+							console.log('i: '+i+'  loc: '+loc);
+							scope.mlist.splice(loc, 1);
+							}
+							scope.model[i].select = false;
 						}
 					}
 				}
@@ -58,9 +64,12 @@ app.directive("checkboxGroup", function() {
 				if(counter > scope.max){
 					removed = select_list.shift();
 					scope.mlist.shift();
+					
 					scope.model[removed].select = false;
 				}
-      }, true); 
+				console.log(counter);
+				console.log(scope.mlist);
+      }, true);
     }
 	}
 });	
