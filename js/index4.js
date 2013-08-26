@@ -1,7 +1,8 @@
-var app, DataCtrl;
-app = angular.module('customDirectiveApp', ['ngSanitize', 'ui.bootstrap']);
+var app = angular.module('customDirectiveApp', ['ngSanitize', 'ui.bootstrap', 'custom.checkboxUI']);
 
 CheckboxGroupCtrl = function($scope) {
+	$scope.sliderValue = 3;
+
 	$scope.data = [
 		{ID:'1', text:'Apple', select:false},
 		{ID:'2', text:'Orange', select:false},
@@ -10,10 +11,11 @@ CheckboxGroupCtrl = function($scope) {
 		{ID:'5', text:'Watermelon', select:false},
 		{ID:'6', text:'Avocado', select:false},
 		{ID:'7', text:'Kiwi', select:false}];
-	$scope.list1 = [];
+	$scope.list1 = [];	
 }
 
-app.directive("checkboxGroup", function() {
+angular.module('custom.checkboxUI', []) // need a better name for this module :P
+.directive("checkboxGroup", function() {
 	var editorTemplate = 
 			'<ul class="unstyled">'+
 				'<li ng-repeat="entry in model">'+
@@ -47,16 +49,17 @@ app.directive("checkboxGroup", function() {
 					if(oldVal[i].select ^ newVal[i].select) {
 						if(newVal[i].select) {
 							select_list.push(i);
-							counter += 1;
 							scope.mlist.push(i);
+							counter += 1;
 						} else {
 							counter -= 1;
 							var loc = scope.mlist.indexOf(i);
-							if(loc >= 0) {
 							console.log('i: '+i+'  loc: '+loc);
-							scope.mlist.splice(loc, 1);
+							if(loc >= 0) {								
+								scope.mlist.splice(loc, 1);
+								select_list.splice(loc, 1);
+								scope.model[i].select = false;
 							}
-							scope.model[i].select = false;
 						}
 					}
 				}
@@ -64,11 +67,8 @@ app.directive("checkboxGroup", function() {
 				if(counter > scope.max){
 					removed = select_list.shift();
 					scope.mlist.shift();
-					
 					scope.model[removed].select = false;
-				}
-				console.log(counter);
-				console.log(scope.mlist);
+				}				
       }, true);
     }
 	}

@@ -26,16 +26,21 @@
 	<p></p>
 	<div class="form-signin" data-ng-app="customDirectiveApp">
 		<div class="" data-ng-controller="CheckboxGroupCtrl">
-			<h3 class="form-signin-heading">AngularJS Custom Directive Demo</h3>
-			<div ng-controller="AlertCtrl">
-				<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
-					<span ng-bind-html="alert.msg"></span>
-				</alert>
-			</div>
+			<h3 class="form-signin-heading">Group of Checkbox: AngularJS Custom Directive Demo</h3>
+			<p>Ever needed a group of checkbox? To be able to let users to check <i>more than one checkbox</i> and <i>less or equal to n checkboxes</i> in AngularJS? 
+			Well, now you can. Check out the demo below:</p>
+			<div class="blank-space"></div>
 			<ul>
 				<li ng-repeat="entry in list1">{{data[entry].text}}</li>
 			</ul>
-			<checkbox-group model="data" mlist="list1" xclass="demo" max=3></checkbox-group>
+			<checkbox-group model="data" mlist="list1" xclass="demo" max={{sliderValue}}></checkbox-group>
+			<p>Max: {{sliderValue}}&nbsp;&nbsp;<input type="range" ng-model="sliderValue" name="maxSlider" min="1" max="6"></p>
+		</div>
+		<div class="blank-space"></div>
+		<div ng-controller="AlertCtrl">
+			<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
+				<span ng-bind-html="alert.msg"></span>
+			</alert>
 		</div>
 		<div class="blank-space"></div>
 		<tabset>
@@ -43,7 +48,7 @@
 				<pre class="rainbow">  <span class="support tag"><span class="support tag">&lt;div</span> <span class="support attribute">data-ng-controller</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">CheckboxGroupCtrl</span><span class="string quote">"</span></span><span class="string quote">&gt;</span></span>
     <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>h3</span><span class="string quote">&gt;</span></span>AngularJS Custom Directive Demo<span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>h3</span><span class="string quote">&gt;</span></span>
     <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>ul</span><span class="string quote">&gt;</span></span>
-    <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>li</span> <span class="support attribute">ng-repeat</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">entry in list1</span><span class="string quote">"</span></span><span class="string quote">&gt;</span></span>{{data[entry].text}}<span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>li</span><span class="string quote">&gt;</span></span>
+	<span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>li</span> <span class="support attribute">ng-repeat</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">entry in list1</span><span class="string quote">"</span></span><span class="string quote">&gt;</span></span>{{data[entry].text}}<span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>li</span><span class="string quote">&gt;</span></span>
     <span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>ul</span><span class="string quote">&gt;</span></span>
     <span class="support tag"><span class="support tag"><span class="string quote">&lt;</span>checkbox-group</span> <span class="support attribute">model</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">data</span><span class="string quote">"</span></span> <span class="support attribute">mlist</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">list1</span><span class="string quote">"</span></span> <span class="support attribute">xclass</span><span class="support attr-value"><span class="string quote">=</span><span class="string quote">"</span><span class="string value">demo</span><span class="string quote">"</span></span> <span class="support attribute">max</span><span class="support attr-value"><span class="string quote">=</span><span class="string value">3</span><span class="string quote">&gt;</span></span></span><span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>checkbox-group</span><span class="string quote">&gt;</span></span>
   <span class="support tag"><span class="support tag"><span class="string quote">&lt;/</span>div</span><span class="string quote">&gt;</span></span>
