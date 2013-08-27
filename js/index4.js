@@ -19,7 +19,7 @@ angular.module('custom.checkboxUI', []) // need a better name for this module :P
 	var editorTemplate = 
 			'<ul class="unstyled">'+
 				'<li ng-repeat="entry in model">'+
-					'<input type="checkbox" ng-model="entry.select" class="{{xclass}}"> {{entry.text}}'+
+					'<label class="lbl-list" onclick><input type="checkbox" ng-model="entry.select" class="{{xclass}}"> {{entry.text}}</label>'+
 				'</li>'+
 			'</ul>';
 	var counter = 0;
