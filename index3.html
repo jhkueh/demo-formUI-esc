@@ -10,7 +10,6 @@
 	<script src="js/index3.js"></script>
 	<link href="css/bstrap3.1.1.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
-	<style type="text/css">.form-signin {padding: 19px 29px 60px;}</style>
 </head>
 <body data-ng-controller="DataCtrl">
 	<ul class="menu-links">
@@ -31,7 +30,7 @@
 			</div>
 			<div ng-controller="TabsCtrl">
 				<tabset>
-					<tab heading="Q1 - Q8">
+					<tab heading="Q1 - Q8" id="P1" active="tabs[0].static">
 						<table class="table table-hover table-bordered">
 							<thead>
 								<tr>
@@ -54,7 +53,7 @@
 							<li class="next" ng-click="tabs[1].static = true"><a href="#P2">Next Page &rarr;</a></li>
 						</ul>
 					</tab>
-					<tab heading="Q9 - Q16">
+					<tab heading="Q9 - Q16" id="P2" active="tabs[1].static">
 						<table class="table table-hover table-bordered">
 							<thead>
 								<tr>
