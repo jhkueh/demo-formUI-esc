@@ -1,5 +1,5 @@
-A Form UI Demo (built with Bootstrap, jQuery & AngularJS) [WIP]
-===============================================================
+Several Form UI Demos (built with Bootstrap, jQuery & AngularJS) [WIP]
+======================================================================
 
 This Form UI [demo](http://jhkueh.github.com/demo-formUI-esc/index.html) (built with Bootstrap, jQuery & AngularJS) is something that I had been working on for a NGO.
 
@@ -9,4 +9,4 @@ This Form UI [demo](http://jhkueh.github.com/demo-formUI-esc/index.html) (built 
 
 Try out the demo [here](http://jhkueh.github.com/demo-formUI-esc/index.html) (hosted on github <-thanks).
 
-*Note: There's several other demos now.
+*Note: There are now several other demos too.
