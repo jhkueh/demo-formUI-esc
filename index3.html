@@ -43,9 +43,9 @@
 							<tbody>
 								<tr ng-repeat="entry in data1">
 									<td>{{entry.text}}</td>
-									<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
-									<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
-									<td class="tdR"><i class="icon-ok gifted-{{entry.gifted}}"></i></td>
+									<td class="tdRange tdR"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
+									<td class="tdR"><input type="checkbox" ng-model="entry.natural" name="N{{entry.name}}"></td>
+									<td class="tdR"><i ng-class="{'glyphicon glyphicon-ok': entry.value > 2 && entry.natural}"></i></td>
 								</tr>
 							</tbody>
 						</table>
@@ -63,9 +63,9 @@
 							<tbody>
 								<tr ng-repeat="entry in data2">
 									<td>{{entry.text}}</td>
-									<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
-									<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
-									<td class="tdR"><i class="icon-ok gifted-{{entry.gifted}}"></i></td>
+									<td class="tdRange tdR"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
+									<td class="tdR"><input type="checkbox" ng-model="entry.natural" name="N{{entry.name}}"></td>
+									<td class="tdR"><i ng-class="{'glyphicon glyphicon-ok': entry.value > 2 && entry.natural}"></i></td>
 								</tr>
 							</tbody>
 						</table>
