@@ -1,7 +1,6 @@
 var app, DataCtrl;
 app = angular.module('sliderInput', ['ngSanitize', 'ui.bootstrap']);
 
-
 DataCtrl = function($scope) {
 	$scope.data1 = [
 		{name:'Q1', text:'1. Mechanical aptitude – understand apply the principles of mechanics / physics.', value:0, natural:false, gifted:false},
@@ -22,22 +21,16 @@ DataCtrl = function($scope) {
 		{name:'Q15', text:'15. Synthesizing information – organise or combine information from different sources so that it is easily understood.', value:0, natural:false, gifted:false},
 		{name:'Q16', text:'16. Theorising – articulate explanations, find connections, or project future trends.', value:0, natural:false, gifted:false}];
 
-	$scope.checkSlider = function($event, entry) {
-		var slider = $event.target;
-		entry.gifted = ( slider.value > 2 && entry.natural ) ? true: false;
-  };
-		
-	$scope.checkBox = function($event, entry) {
-		var checkbox = $event.target;
-		entry.gifted = ( checkbox.checked && entry.value>2 ) ? true: false;
-  };
-	
 	$scope.submitForm = function() {
 		alert('This is just a demo!');
   };
 }
 
 var TabsCtrl = function ($scope) {
+	$scope.tabs = [
+		{static: true},
+		{static: false}
+	];
 }
 
 var AlertCtrl = function ($scope) {

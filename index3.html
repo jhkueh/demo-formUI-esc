@@ -4,15 +4,12 @@
 	<meta charset="utf-8">
 	<title>Form UI Demo(3)</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-sanitize.js"></script>
-	<script src="js/ui-bootstrap-custom-0.4.0.min.js"></script>
-	<script src="js/ui-bootstrap-custom-tpls-0.4.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.js"></script>
+	<script src="js/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
 	<script src="js/index3.js"></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="css/bstrap3.1.1.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
-	<style type="text/css"> .gifted-false{visibility:hidden;} .gifted-true{visibility:visible;}</style>
 </head>
 <body data-ng-controller="DataCtrl">
 	<ul class="menu-links">
@@ -25,63 +22,64 @@
 	<p></p>
 	<div class="container-fluid">
 		<form class="form-signin" ng-submit="submitForm()">
-					<h2 class="form-signin-heading">LIFE GIFT TEST (Beta)</h2>
-					<div ng-controller="AlertCtrl">
-						<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
-							<span ng-bind-html="alert.msg"></span>
-						</alert>
-					</div>
-					<div ng-controller="TabsCtrl">
-						<tabset>
-							<tab heading="Q1 - Q8">
-								<table class="table table-hover table-bordered">
-									<thead>
-										<tr>
-											<th>Life Gifts</th>
-											<th>Was it enjoyable?</br>(0 = terrible, 4 = great)</th>
-											<th>Is natural?</th>
-											<th>Is life gifts?</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr ng-repeat="entry in data1">
-											<td>{{entry.text}}</td>
-											<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
-											<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
-											<td class="tdR"><i class="icon-ok gifted-{{entry.gifted}}"></i></td>
-										</tr>
-									</tbody>
-								</table>
-							</tab>
-							<tab heading="Q9 - Q16">
-								<table class="table table-hover table-bordered">
-									<thead>
-										<tr>
-											<th>Life Gifts</th>
-											<th>Was it enjoyable?</br>(0 = terrible, 4 = great)</th>
-											<th>Is natural?</th>
-											<th>Is life gifts?</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr ng-repeat="entry in data2">
-											<td>{{entry.text}}</td>
-											<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
-											<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
-											<td class="tdR"><i class="icon-ok gifted-{{entry.gifted}}"></i></td>
-										</tr>
-									</tbody>
-								</table>
-								<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
-							</tab>
-						</div>
+			<h2 class="form-signin-heading">LIFE GIFT TEST (Beta)</h2>
+			<div ng-controller="AlertCtrl">
+				<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
+					<span ng-bind-html="alert.msg"></span>
+				</alert>
+			</div>
+			<div ng-controller="TabsCtrl">
+				<tabset>
+					<tab heading="Q1 - Q8">
+						<table class="table table-hover table-bordered">
+							<thead>
+								<tr>
+									<th>Life Gifts</th>
+									<th>Was it enjoyable?</br>(0 = terrible, 4 = great)</th>
+									<th>Is natural?</th>
+									<th>Is life gifts?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="entry in data1">
+									<td>{{entry.text}}</td>
+									<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
+									<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
+									<td class="tdR"><i class="icon-ok gifted-{{entry.gifted}}"></i></td>
+								</tr>
+							</tbody>
+						</table>
+					</tab>
+					<tab heading="Q9 - Q16">
+						<table class="table table-hover table-bordered">
+							<thead>
+								<tr>
+									<th>Life Gifts</th>
+									<th>Was it enjoyable?</br>(0 = terrible, 4 = great)</th>
+									<th>Is natural?</th>
+									<th>Is life gifts?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="entry in data2">
+									<td>{{entry.text}}</td>
+									<td class="tdRange tdR"><input type="range" ng-model="entry.value" ng-click="checkSlider($event, entry)" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
+									<td class="tdR"><input type="checkbox" ng-model="entry.natural" ng-click="checkBox($event, entry)" name="N{{entry.name}}"></td>
+									<td class="tdR"><i class="icon-ok gifted-{{entry.gifted}}"></i></td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
+					</tab>
+				</tabset>
+			</div>
 		</form>
 	</div>
 	<footer>
 		<div class="container footer">
 			<hr>
 			<p class="pull-right"><a href="https://github.com/jhkueh">github.com/jhkueh</a></p>
-			<p class="pull-left">Powered by <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>, <a href="http://angularjs.org/">AngularJS</a> & <a href="http://angular-ui.github.io/bootstrap">UI-Bootstrap</a>.</p>
+			<p class="pull-left">Powered by <a href="http://getbootstrap.com/">Bootstrap</a>, <a href="http://angularjs.org/">AngularJS</a> & <a href="http://angular-ui.github.io/bootstrap">UI-Bootstrap</a>.</p>
 		</div>
 	</footer>
 </body>
