@@ -42,10 +42,10 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="entry in data1">
-									<td>{{entry.text}}</td>
+								<tr ng-repeat="e in data1">
+									<td>{{e.text}}</td>
 									<td class="tdRange tdR"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
-									<td class="tdR"><input type="checkbox" ng-model="entry.natural" name="N{{entry.name}}"></td>
+									<td class="tdR" ng-click="entry.natural = !entry.natural"><input type="checkbox" ng-model="entry.natural" name="N{{entry.name}}"></td>
 									<td class="tdR"><i ng-class="{'glyphicon glyphicon-ok': entry.value > 2 && entry.natural}"></i></td>
 								</tr>
 							</tbody>
@@ -68,7 +68,7 @@
 								<tr ng-repeat="entry in data2">
 									<td>{{entry.text}}</td>
 									<td class="tdRange tdR"><input type="range" ng-model="entry.value" name="{{entry.name}}" min="0" max="4">&nbsp;{{entry.value}}</td>
-									<td class="tdR"><input type="checkbox" ng-model="entry.natural" name="N{{entry.name}}"></td>
+									<td class="tdR" ng-click="entry.natural = !entry.natural"><input type="checkbox" ng-model="entry.natural" name="N{{entry.name}}"></td>
 									<td class="tdR"><i ng-class="{'glyphicon glyphicon-ok': entry.value > 2 && entry.natural}"></i></td>
 								</tr>
 							</tbody>
