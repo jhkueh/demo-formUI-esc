@@ -45,7 +45,7 @@
 								<tr ng-repeat="e in data1">
 									<td>{{e.text}}</td>
 									<td class="tdRange tdR"><input type="range" ng-model="e.value" name="{{e.name}}" min="0" max="4">&nbsp;{{e.value}}</td>
-									<td class="tdR" ng-click="e.natural = !e.natural"><input type="checkbox" ng-model="e.natural" name="N{{e.name}}"></td>
+									<td class="tdR"><input type="checkbox" ng-model="e.natural" name="N{{e.name}}"></td>
 									<td class="tdR"><i ng-class="{'glyphicon glyphicon-ok': e.value > 2 && e.natural}"></i></td>
 								</tr>
 							</tbody>
@@ -68,7 +68,7 @@
 								<tr ng-repeat="e in data2">
 									<td>{{e.text}}</td>
 									<td class="tdRange tdR"><input type="range" ng-model="e.value" name="{{e.name}}" min="0" max="4">&nbsp;{{e.value}}</td>
-									<td class="tdR" ng-click="e.natural = !e.natural"><input type="checkbox" ng-model="e.natural" name="N{{e.name}}"></td>
+									<td class="tdR"><input type="checkbox" ng-model="e.natural" name="N{{e.name}}"></td>
 									<td class="tdR"><i ng-class="{'glyphicon glyphicon-ok': e.value > 2 && e.natural}"></i></td>
 								</tr>
 							</tbody>
