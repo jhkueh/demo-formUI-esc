@@ -10,6 +10,7 @@
 	<script src="js/index3.js"></script>
 	<link href="css/bstrap3.1.1.min.css" rel="stylesheet">
 	<link href="css/base_responsive.css" rel="stylesheet">
+	<style type="text/css">.form-signin {padding: 19px 29px 60px;}</style>
 </head>
 <body data-ng-controller="DataCtrl">
 	<ul class="menu-links">
@@ -49,6 +50,9 @@
 								</tr>
 							</tbody>
 						</table>
+						<ul class="pager">
+							<li class="next" ng-click="tabs[1].static = true"><a href="#P2">Next Page &rarr;</a></li>
+						</ul>
 					</tab>
 					<tab heading="Q9 - Q16">
 						<table class="table table-hover table-bordered">
@@ -69,7 +73,10 @@
 								</tr>
 							</tbody>
 						</table>
-						<p class="pull-right"><button class="btn btn-large btn-primary" type="submit" name="submit">Submit</button></p>
+						<ul class="pager">
+							<li class="previous" ng-click="tabs[0].static = true"><a href="#P1">&larr; Previous Page</a></li>
+							<li class="pull-right"><button class="btn btn-success btn-lg" type="submit" name="submit">Submit</button></li>
+						</ul>
 					</tab>
 				</tabset>
 			</div>
